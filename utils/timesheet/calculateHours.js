@@ -1,9 +1,23 @@
-const { sumHours } = require('./sumHours');
+const nums = {
+  0: '0',
+  15: '25',
+  30: '50',
+  45: '75',
+};
 
 const calculateHours = (row) => {
-  const weekOneHours = sumHours(row.slice(6, 13));
-  const weekTwoHours = sumHours(row.slice(14, row.length - 2));
-  return [weekOneHours, weekTwoHours];
+  const startTime = new Date(row[4]);
+  const endTime = new Date(row[5]);
+  if (startTime instanceof Date && endTime instanceof Date) {
+    const start = `${startTime.getUTCHours()}.${
+      nums[startTime.getUTCMinutes()]
+    }`;
+    const end = `${endTime.getUTCHours()}.${nums[endTime.getUTCMinutes()]}`;
+
+    if (start > 0 || end > 0) {
+      console.log(end - start);
+    }
+  }
 };
 
 module.exports = { calculateHours };

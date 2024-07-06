@@ -1,8 +1,8 @@
-const { traverseRows } = require('./traverseRows');
+const { calculateHours } = require('./calculateHours');
 
 const traverseExcel = (excel) => {
   for (let x = 0; x < excel.length; x++) {
-    traverseRows(excel[x]);
+    calculateHours(excel[x]);
   }
 };
 
