@@ -5,7 +5,7 @@ const nums = {
   45: '75',
 };
 
-const calculateHours = (row) => {
+const calculateShiftHours = (row) => {
   const startTime = new Date(row[4]);
   const endTime = new Date(row[5]);
   if (startTime instanceof Date && endTime instanceof Date) {
@@ -15,9 +15,9 @@ const calculateHours = (row) => {
     const end = `${endTime.getUTCHours()}.${nums[endTime.getUTCMinutes()]}`;
 
     if (start > 0 || end > 0) {
-      console.log(end - start);
+      return (end - start).toFixed(2);
     }
   }
 };
 
-module.exports = { calculateHours };
+module.exports = { calculateShiftHours };

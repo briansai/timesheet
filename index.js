@@ -1,5 +1,5 @@
 const readXlsxFile = require('read-excel-file/node');
-const { traverseExcel } = require('./utils/timesheet/traverseExcel');
+const { traverseExcel } = require('./utils/functions/timesheet/traverseExcel');
 
 const tsheet = process.argv;
 
