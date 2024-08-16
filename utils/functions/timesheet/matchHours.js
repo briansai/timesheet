@@ -1,5 +1,5 @@
 const matchHours = (week, hours) => {
-  let allCorrect = true;
+  let allCorrect = '';
 
   for (let x = 0; x < week.length; x++) {
     let hr = week[x];
@@ -8,7 +8,7 @@ const matchHours = (week, hours) => {
       hr = hr.toFixed(2);
 
       if (hr !== hours) {
-        allCorrect = false;
+        allCorrect = `${hr} does not equal to the shift hours of ${hours}`;
       }
     }
   }
